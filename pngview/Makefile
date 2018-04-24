@@ -2,9 +2,9 @@ OBJS=pngview.o
 BIN=pngview
 
 CFLAGS+=-Wall -g -O3 -I../common $(shell pkg-config libpng --cflags)
-LDFLAGS+=-L/opt/vc/lib/ -lbcm_host -lm $(shell pkg-config libpng --libs) -L../lib -lraspidmx
+LDFLAGS+=-L/usr/lib/ -lbcm_host -lvchostif -lm $(shell pkg-config libpng --libs) -L../lib -lraspidmx
 
-INCLUDES+=-I/opt/vc/include/ -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux
+INCLUDES+=-I/usr/include -I/usr/include/interface/vcos/pthreads -I/usr/include/interface/vmcs_host/linux
 
 all: $(BIN)
 
