@@ -9,8 +9,8 @@ OBJS=../common/backgroundLayer.o ../common/imageGraphics.o ../common/key.o ../co
  ../common/hsv2rgb.o ../common/imageLayer.o ../common/savepng.o \
  ../common/image.o ../common/imagePalette.o ../common/scrollingLayer.o
 
-CFLAGS+=-Wall -g -O3 -I../common $(shell libpng-config --cflags)
-LDFLAGS+=-L/opt/vc/lib/ -lbcm_host -lm $(shell libpng-config --ldflags)
+CFLAGS+=-Wall -g -O3 -I../common $(shell pkg-config libpng --cflags)
+LDFLAGS+=-L/opt/vc/lib/ -lbcm_host -lm $(shell pkg-config libpng --libs)
 
 INCLUDES+=-I/opt/vc/include/ -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux
 
